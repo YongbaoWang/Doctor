@@ -19,6 +19,9 @@
 		1D7480551ABA66F20045DC99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D74803D1ABA66F10045DC99 /* UIKit.framework */; };
 		1D74805D1ABA66F20045DC99 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D74805B1ABA66F20045DC99 /* InfoPlist.strings */; };
 		1D74805F1ABA66F20045DC99 /* DoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D74805E1ABA66F20045DC99 /* DoctorTests.m */; };
+		1D74806E1ABA67600045DC99 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D74806D1ABA67600045DC99 /* BaseViewController.m */; };
+		1D7480751ABA679F0045DC99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7480731ABA679F0045DC99 /* MainViewController.m */; };
+		1D7480761ABA679F0045DC99 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7480741ABA679F0045DC99 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,13 @@
 		1D74805A1ABA66F20045DC99 /* DoctorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoctorTests-Info.plist"; sourceTree = "<group>"; };
 		1D74805C1ABA66F20045DC99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1D74805E1ABA66F20045DC99 /* DoctorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorTests.m; sourceTree = "<group>"; };
+		1D74806C1ABA67600045DC99 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		1D74806D1ABA67600045DC99 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		1D7480721ABA679F0045DC99 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1D7480731ABA679F0045DC99 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1D7480741ABA679F0045DC99 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1D7480781ABA67C00045DC99 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		1D7480791ABA67D60045DC99 /* ViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +117,10 @@
 		1D74803F1ABA66F10045DC99 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
-				1D7480481ABA66F10045DC99 /* AppDelegate.h */,
-				1D7480491ABA66F10045DC99 /* AppDelegate.m */,
+				1D7480681ABA67230045DC99 /* AppDelegate */,
+				1D7480771ABA67A30045DC99 /* Macro */,
+				1D74806A1ABA67450045DC99 /* General */,
+				1D7480691ABA67330045DC99 /* Sections */,
 				1D74804B1ABA66F10045DC99 /* Images.xcassets */,
 				1D7480401ABA66F10045DC99 /* Supporting Files */,
 			);
@@ -142,6 +154,51 @@
 				1D74805B1ABA66F20045DC99 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D7480681ABA67230045DC99 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D7480481ABA66F10045DC99 /* AppDelegate.h */,
+				1D7480491ABA66F10045DC99 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1D7480691ABA67330045DC99 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				1D7480721ABA679F0045DC99 /* MainViewController.h */,
+				1D7480731ABA679F0045DC99 /* MainViewController.m */,
+				1D7480741ABA679F0045DC99 /* MainViewController.xib */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		1D74806A1ABA67450045DC99 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				1D74806B1ABA674A0045DC99 /* Class */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		1D74806B1ABA674A0045DC99 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				1D74806C1ABA67600045DC99 /* BaseViewController.h */,
+				1D74806D1ABA67600045DC99 /* BaseViewController.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		1D7480771ABA67A30045DC99 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				1D7480781ABA67C00045DC99 /* AppMacro.h */,
+				1D7480791ABA67D60045DC99 /* ViewMacro.h */,
+			);
+			name = Macro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7480441ABA66F10045DC99 /* InfoPlist.strings in Resources */,
+				1D7480761ABA679F0045DC99 /* MainViewController.xib in Resources */,
 				1D74804C1ABA66F10045DC99 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D74804A1ABA66F10045DC99 /* AppDelegate.m in Sources */,
+				1D74806E1ABA67600045DC99 /* BaseViewController.m in Sources */,
 				1D7480461ABA66F10045DC99 /* main.m in Sources */,
+				1D7480751ABA679F0045DC99 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -346,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -360,6 +420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Doctor/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "Doctor/Doctor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,6 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Doctor/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "Doctor/Doctor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
