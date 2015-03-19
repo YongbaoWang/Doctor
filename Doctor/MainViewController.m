@@ -19,7 +19,10 @@
 #pragma mark - view lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
+    UIImageView *imageView=[[UIImageView alloc] initWithFrame:self.view.frame];
+    imageView.image=[UIImage imageNamed:@"bg"];
+    [imageView setContentMode:UIViewContentModeScaleToFill];
+    [self.view insertSubview:imageView atIndex:0];
     self.navigationItem.title=@"";
     [self.tableView setBackgroundColor:[UIColor clearColor]];
 
