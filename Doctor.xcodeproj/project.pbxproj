@@ -22,6 +22,7 @@
 		1D74806E1ABA67600045DC99 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D74806D1ABA67600045DC99 /* BaseViewController.m */; };
 		1D7480751ABA679F0045DC99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7480731ABA679F0045DC99 /* MainViewController.m */; };
 		1D7480761ABA679F0045DC99 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7480741ABA679F0045DC99 /* MainViewController.xib */; };
+		1DAED4391ABAAE590045783F /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAED4381ABAAE590045783F /* MainTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		1D7480741ABA679F0045DC99 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1D7480781ABA67C00045DC99 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		1D7480791ABA67D60045DC99 /* ViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMacro.h; sourceTree = "<group>"; };
+		1DAED4371ABAAE590045783F /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		1DAED4381ABAAE590045783F /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,7 @@
 		1D74806A1ABA67450045DC99 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				1DAED4361ABAAE2D0045783F /* View */,
 				1D74806B1ABA674A0045DC99 /* Class */,
 			);
 			name = General;
@@ -199,6 +203,15 @@
 				1D7480791ABA67D60045DC99 /* ViewMacro.h */,
 			);
 			name = Macro;
+			sourceTree = "<group>";
+		};
+		1DAED4361ABAAE2D0045783F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DAED4371ABAAE590045783F /* MainTableViewCell.h */,
+				1DAED4381ABAAE590045783F /* MainTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +314,7 @@
 				1D74806E1ABA67600045DC99 /* BaseViewController.m in Sources */,
 				1D7480461ABA66F10045DC99 /* main.m in Sources */,
 				1D7480751ABA679F0045DC99 /* MainViewController.m in Sources */,
+				1DAED4391ABAAE590045783F /* MainTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +513,7 @@
 				1D7480641ABA66F20045DC99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D7480651ABA66F20045DC99 /* Build configuration list for PBXNativeTarget "DoctorTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +522,7 @@
 				1D7480671ABA66F20045DC99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

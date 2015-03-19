@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ViewMacro.h"
+#import "MainTableViewCell.h"
 
 @interface MainViewController ()
 
@@ -18,9 +19,10 @@
 #pragma mark - view lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:color(232, 232, 232, 1)];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
     self.navigationItem.title=@"";
-    
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,26 +36,29 @@
     return 5;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSString *title=nil;
+    UILabel *title=[[UILabel alloc] init];
+    [title setBackgroundColor:color(0, 0, 0, 0.2)];
+
     switch (section) {
         case kSectionHead:
-            title=@"头部";
+            title.text=@"头部";
             break;
         case kSectionBody:
-            title=@"躯干";
+            title.text=@"躯干";
             break;
         case kSectionAccident:
-            title=@"意外";
+            title.text=@"意外";
             break;
         case kSectionNature:
-            title=@"自然";
+            title.text=@"自然";
             break;
         case kSectionNormal:
-            title=@"常识";
+            title.text=@"常识";
             break;
         default:
+            title.text=@"";
             break;
     }
     return title;
@@ -87,11 +92,25 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identity=@"myCell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identity];
+    MainTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identity];
     if (cell==nil) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identity];
+        cell=[[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identity];
     }
+    cell.index=indexPath.row%4+1;
+    cell.title=@"Abc";
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*

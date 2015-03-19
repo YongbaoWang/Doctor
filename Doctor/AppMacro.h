@@ -9,6 +9,6 @@
 #ifndef Doctor_AppMacro_h
 #define Doctor_AppMacro_h
 
-#define color(r,g,b,a) [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:a]
+#define color(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 #endif
