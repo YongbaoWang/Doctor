@@ -27,14 +27,15 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self.contentView setBackgroundColor:[UIColor clearColor]];
     
-    _titleLbl =[[UILabel alloc] initWithFrame:CGRectMake(100, 15, 160, 60)];
-    [_titleLbl setFont:[UIFont systemFontOfSize:24.0]];
+    _titleLbl =[[UILabel alloc] initWithFrame:CGRectMake(100, 13, 160, 60)];
+    [_titleLbl setFont:[UIFont boldSystemFontOfSize:22.0]];
+    [_titleLbl setTextColor:[UIColor brownColor]];
     [_imageView addSubview:_titleLbl];
 }
 
 -(void)setIndex:(NSInteger)index
 {
-    _imageView.image=[UIImage imageNamed:[NSString stringWithFormat:@"num_bg_%d",index]];
+    _imageView.image=[UIImage imageNamed:[NSString stringWithFormat:@"num_bg_%d",(int)index]];
 }
 
 -(void)setTitle:(NSString *)title
