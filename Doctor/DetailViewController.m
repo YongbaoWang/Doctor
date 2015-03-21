@@ -10,6 +10,9 @@
 #import "ViewMacro.h"
 
 @interface DetailViewController ()
+{
+    NSDictionary *_dataDic;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -32,6 +35,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self _initDataSource];
     [self _initView];
 }
 
@@ -53,6 +57,17 @@
     [self.tableView setTableHeaderView:imageView];
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self.tableView setTableFooterView:[[UIView alloc] init] ];
+}
+
+-(void)_initDataSource
+{
+    NSString *filePath=[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"data.json"];
+    NSData *data=[NSData dataWithContentsOfFile:filePath];
+    NSError *err=nil;
+    id object= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+    NSLog(@"%@",object);
+    _dataDic=[NSDictionary dictionaryWithDictionary:object];
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -77,31 +92,48 @@
 
 -(void)refreshCell:(UITableViewCell *)cell forRwoAtIndexPath:(NSIndexPath *)indexPath
 {
-//    switch (indexPath.section) {
-//        case kSectionHead:
-//            
-//            break;
-//        case kSectionHead:
-//            
-//            break;
-//        case kSectionHead:
-//            
-//            break;
-//        case kSectionHead:
-//            
-//            break;
-//        case kSectionHead:
-//            
-//            break;
-//        default:
-//            break;
-//    }
+    switch (self.indexPath.section) {
+        case kSectionHead:
+            switch (self.indexPath.row) {
+                case kTouBuWaiShang:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+            break;
+        case kSectionBody:
+            
+            break;
+        case kSectionAccident:
+            
+            break;
+        case kSectionNature:
+            
+            break;
+        case kSectionNormal:
+            
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    NSString *text= _dataDic[[NSString stringWithFormat:@"%d",self.indexPath.section]][self.indexPath.row][[NSString stringWithFormat:@"%d",indexPath.row]];
+    
+    CGSize size=CGSizeZero;
+    if ([text respondsToSelector:@selector(sizeWithFont:forWidth:lineBreakMode:)]) {
+        size=[text sizeWithFont:[UIFont systemFontOfSize:kDetailRowFontSize] forWidth:kDetailRowTextWidth lineBreakMode:NSLineBreakByWordWrapping];
+    }
+    else {
+        size= [text boundingRectWithSize:CGSizeMake(kDetailRowTextWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kDetailRowFontSize]} context:nil].size;
+    }
+    return size.height;
+    
 }
 
 @end

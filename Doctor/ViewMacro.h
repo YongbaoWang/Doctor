@@ -89,4 +89,7 @@
 #define kCuSi 6
 #define kYuFangCuSi 7
 
+#define kDetailRowFontSize 28
+#define kDetailRowTextWidth (self.tableView.frame.size.width-20)
+
 #endif
