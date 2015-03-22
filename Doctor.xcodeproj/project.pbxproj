@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6960921ABE9AF600E50234 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6960911ABE9AF600E50234 /* DetailTableViewCell.m */; };
+		1D6960991ABE9E5C00E50234 /* DetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6960981ABE9E5C00E50234 /* DetailInfo.m */; };
 		1D74803A1ABA66F10045DC99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7480391ABA66F10045DC99 /* Foundation.framework */; };
 		1D74803C1ABA66F10045DC99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D74803B1ABA66F10045DC99 /* CoreGraphics.framework */; };
 		1D74803E1ABA66F10045DC99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D74803D1ABA66F10045DC99 /* UIKit.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D6960901ABE9AF600E50234 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		1D6960911ABE9AF600E50234 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		1D6960971ABE9E5C00E50234 /* DetailInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInfo.h; sourceTree = "<group>"; };
+		1D6960981ABE9E5C00E50234 /* DetailInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInfo.m; sourceTree = "<group>"; };
 		1D7480361ABA66F10045DC99 /* Doctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7480391ABA66F10045DC99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D74803B1ABA66F10045DC99 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D6960931ABE9E2700E50234 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D6960971ABE9E5C00E50234 /* DetailInfo.h */,
+				1D6960981ABE9E5C00E50234 /* DetailInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1D74802D1ABA66F10045DC99 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +142,7 @@
 		1D74803F1ABA66F10045DC99 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				1D6960931ABE9E2700E50234 /* Model */,
 				1D7480681ABA67230045DC99 /* AppDelegate */,
 				1D7480771ABA67A30045DC99 /* Macro */,
 				1D74806A1ABA67450045DC99 /* General */,
@@ -221,6 +237,8 @@
 			children = (
 				1DAED4371ABAAE590045783F /* MainTableViewCell.h */,
 				1DAED4381ABAAE590045783F /* MainTableViewCell.m */,
+				1D6960901ABE9AF600E50234 /* DetailTableViewCell.h */,
+				1D6960911ABE9AF600E50234 /* DetailTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -329,6 +347,8 @@
 				1D7480751ABA679F0045DC99 /* MainViewController.m in Sources */,
 				1DAED4391ABAAE590045783F /* MainTableViewCell.m in Sources */,
 				1D86EC401ABBCA7C009845D8 /* DetailViewController.m in Sources */,
+				1D6960991ABE9E5C00E50234 /* DetailInfo.m in Sources */,
+				1D6960921ABE9AF600E50234 /* DetailTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

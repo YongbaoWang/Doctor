@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "ViewMacro.h"
+#import "DetailTableViewCell.h"
 
 @interface DetailViewController ()
 {
@@ -79,46 +80,19 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identity=@"myCell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identity];
+    DetailTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identity];
     if (cell==nil) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identity];
+        cell=[[DetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identity];
     }
-    cell.backgroundColor=[UIColor clearColor];
-    [cell.contentView setBackgroundColor:[UIColor clearColor]];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.textLabel.text=@"abc";
+
+    NSString *text= _dataDic[[NSString stringWithFormat:@"%d",self.indexPath.section]][self.indexPath.row][[NSString stringWithFormat:@"%d",indexPath.row]];
+    DetailInfo *model=[[DetailInfo alloc] init];
+    model.text=text;
+    cell.model=model;
+    
     return cell;
 }
 
--(void)refreshCell:(UITableViewCell *)cell forRwoAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (self.indexPath.section) {
-        case kSectionHead:
-            switch (self.indexPath.row) {
-                case kTouBuWaiShang:
-                    
-                    break;
-                    
-                default:
-                    break;
-            }
-            break;
-        case kSectionBody:
-            
-            break;
-        case kSectionAccident:
-            
-            break;
-        case kSectionNature:
-            
-            break;
-        case kSectionNormal:
-            
-            break;
-        default:
-            break;
-    }
-}
 
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -126,11 +100,13 @@
     NSString *text= _dataDic[[NSString stringWithFormat:@"%d",self.indexPath.section]][self.indexPath.row][[NSString stringWithFormat:@"%d",indexPath.row]];
     
     CGSize size=CGSizeZero;
-    if ([text respondsToSelector:@selector(sizeWithFont:forWidth:lineBreakMode:)]) {
-        size=[text sizeWithFont:[UIFont systemFontOfSize:kDetailRowFontSize] forWidth:kDetailRowTextWidth lineBreakMode:NSLineBreakByWordWrapping];
+    if ([text respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        size= [text boundingRectWithSize:CGSizeMake(kDetailRowTextWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kDetailRowFontSize]} context:nil].size;
+
     }
     else {
-        size= [text boundingRectWithSize:CGSizeMake(kDetailRowTextWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kDetailRowFontSize]} context:nil].size;
+        size=[text sizeWithFont:[UIFont systemFontOfSize:kDetailRowFontSize] forWidth:kDetailRowTextWidth lineBreakMode:NSLineBreakByWordWrapping];
+
     }
     return size.height;
     
