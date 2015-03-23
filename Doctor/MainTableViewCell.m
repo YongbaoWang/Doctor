@@ -40,6 +40,7 @@
 
 -(void)setTitle:(NSString *)title
 {
+    _title=title;
     _titleLbl.text=title;
 }
 

@@ -11,5 +11,6 @@
 @interface DetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)NSIndexPath *indexPath ;
+@property(nonatomic,copy)NSString *navTitle;
 
 @end

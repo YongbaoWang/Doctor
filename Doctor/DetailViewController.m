@@ -46,6 +46,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Property Actiion
+-(void)setNavTitle:(NSString *)navTitle
+{
+    _navTitle=navTitle;
+    self.title=navTitle;
+}
+
+#pragma mark - Actions
 -(void)_initView
 {
     UIImageView *bgImage=[[UIImageView alloc] initWithFrame:self.view.frame];
@@ -74,7 +82,7 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return ((NSArray *)_dataDic[[NSString stringWithFormat:@"%d",self.indexPath.section]][self.indexPath.row]).count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

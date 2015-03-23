@@ -24,8 +24,14 @@
     imageView.image=[UIImage imageNamed:@"bg"];
     [imageView setContentMode:UIViewContentModeScaleToFill];
     [self.view insertSubview:imageView atIndex:0];
-    self.navigationItem.title=@"";
+    UILabel *title=[[UILabel alloc] initWithFrame:CGRectMake(0, 0,80, 44)];
+    title.text=@"急救医生";
+    [title setTextColor:[UIColor redColor]];
+    [title setFont:[UIFont systemFontOfSize:18.0]];
+    self.navigationItem.titleView=title;
     [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
+    self.seg.frame=CGRectMake(100, 100, 90, 90);
 
 }
 
@@ -263,8 +269,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MainTableViewCell *cell=(MainTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     DetailViewController *detailVC=[[DetailViewController alloc] init];
     detailVC.indexPath=indexPath;
+    detailVC.title=cell.title;
     [self.navigationController pushViewController:detailVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
